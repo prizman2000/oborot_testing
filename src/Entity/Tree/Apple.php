@@ -7,20 +7,26 @@ use App\Types\TreeTypes;
 class Apple implements TreeInterface
 {
     private int $id;
-    private int $fruits;
+    private array $fruits;
 
     public function __construct(int $id)
     {
         $this->id = $id;
-        $this->setFruits();
+        $this->fruits = $this->setFruits();
     }
 
     function setFruits()
     {
-        $this->fruits = rand(40, 50);
+        $fruits = [];
+        $total = rand(40, 60);
+        for ($i = 0; $i < $total; $i++) {
+            array_push($fruits, rand(150, 180));
+        }
+
+        return $fruits;
     }
 
-    function getFruits(): int
+    function getFruits(): array
     {
         return $this->fruits;
     }

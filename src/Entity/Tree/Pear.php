@@ -7,20 +7,26 @@ use App\Types\TreeTypes;
 class Pear implements TreeInterface
 {
     private int $id;
-    private int $fruits;
+    private array $fruits;
 
     public function __construct(int $id)
     {
         $this->id = $id;
-        $this->setFruits();
+        $this->fruits = $this->setFruits();
     }
 
     function setFruits()
     {
-        $this->fruits = rand(0, 20);
+        $fruits = [];
+        $total = rand(0, 20);
+        for ($i = 0; $i < $total; $i++) {
+            array_push($fruits, rand(130, 170));
+        }
+
+        return $fruits;
     }
 
-    function getFruits(): int
+    function getFruits(): array
     {
         return $this->fruits;
     }

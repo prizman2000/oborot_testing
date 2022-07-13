@@ -6,7 +6,7 @@ interface TreeInterface
 {
     function setFruits();
 
-    function getFruits() : int;
+    function getFruits() : array;
 
     function getType() : string;
 }

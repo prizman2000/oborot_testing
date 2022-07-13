@@ -7,8 +7,8 @@ use App\Entity\Tree\TreeInterface;
 
 class AppleFabric extends TreeFabric
 {
-    function createTree(): TreeInterface
+    function createTree(int $id): TreeInterface
     {
-        return new Apple();
+        return new Apple($id);
     }
 }

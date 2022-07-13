@@ -13,11 +13,13 @@ class Application
     private PearFabric $peerFabric;
     private int $appleValue = 10;
     private int $pearValue = 15;
+    private int $registerNumber;
 
     public function __construct()
     {
         $this->appleFabric = new AppleFabric();
         $this->peerFabric = new PearFabric();
+        $this->registerNumber = 1;
     }
 
     public function run()
@@ -26,11 +28,13 @@ class Application
         $collector = new Collector();
 
         for ($i = 0; $i < $this->appleValue; $i++) {
-            $garden->addTree($this->appleFabric->createTree());
+            $garden->addTree($this->appleFabric->createTree($this->registerNumber));
+            $this->registerNumber++;
         }
 
         for ($i = 0; $i < $this->pearValue; $i++) {
-            $garden->addTree($this->peerFabric->createTree());
+            $garden->addTree($this->peerFabric->createTree($this->registerNumber));
+            $this->registerNumber++;
         }
 
         $collector->collect($garden);

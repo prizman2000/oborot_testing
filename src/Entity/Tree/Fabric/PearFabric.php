@@ -7,8 +7,8 @@ use App\Entity\Tree\TreeInterface;
 
 class PearFabric extends TreeFabric
 {
-    public function createTree(): TreeInterface
+    public function createTree(int $id): TreeInterface
     {
-        return new Pear();
+        return new Pear($id);
     }
 }

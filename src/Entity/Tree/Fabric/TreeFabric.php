@@ -6,5 +6,5 @@ use App\Entity\Tree\TreeInterface;
 
 abstract class TreeFabric
 {
-    abstract function createTree() : TreeInterface;
+    abstract function createTree(int $id) : TreeInterface;
 }

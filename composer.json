@@ -1,0 +1,9 @@
+{
+    "name": "neu_net/oborot_testing",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}

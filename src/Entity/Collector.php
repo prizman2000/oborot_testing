@@ -45,13 +45,40 @@ class Collector
     {
         $this->totalTrees = 0;
         $this->totalApples = 0;
+        $this->totalApplesWeight = 0;
         $this->totalPears = 0;
+        $this->totalPearsWeight = 0;
+    }
+
+    public function getTotalTrees(): int
+    {
+        return $this->totalTrees;
+    }
+
+    public function getTotalApples(): int
+    {
+        return $this->totalApples;
+    }
+
+    public function getTotalPears(): int
+    {
+        return $this->totalPears;
+    }
+
+    public function getTotalApplesWeight(): int
+    {
+        return $this->totalApplesWeight;
+    }
+
+    public function getTotalPearsWeight(): int
+    {
+        return $this->totalPearsWeight;
     }
 
     public function state() : string
     {
-        return 'Обработано деревьев: ' . $this->totalTrees .
-            '. Собрано яблок: ' . $this->totalApples . ' общей массой ' . (float)$this->totalApplesWeight/1000 . 'kg' .
-            '. Собрано груш: ' . $this->totalPears . ' общей массой ' . (float)$this->totalPearsWeight/1000 . 'kg';
+        return 'Обработано деревьев: ' . $this->getTotalTrees() .
+            '. Собрано яблок: ' . $this->getTotalApples() . ' общей массой ' . (float)$this->getTotalApplesWeight()/1000 . 'kg' .
+            '. Собрано груш: ' . $this->getTotalPears() . ' общей массой ' . (float)$this->getTotalPearsWeight()/1000 . 'kg';
     }
 }
